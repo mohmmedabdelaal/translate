@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import UserCreate from './UserCreate';
+import ColorContext from '../context/ColorContext';
+import LanguageContext from '../context/LanguageContext';
 
 function App() {
   const [language, setLanguage] = useState('english');
@@ -17,7 +19,11 @@ function App() {
         </h2>
       </div>
       <div>
-        <UserCreate />
+        <ColorContext.Provider value="green">
+          <LanguageContext.Provider value={language}>
+            <UserCreate />
+          </LanguageContext.Provider>
+        </ColorContext.Provider>
       </div>
     </div>
   );
