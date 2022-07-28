@@ -17,11 +17,7 @@ const Button = () => {
   };
 
   return (
-    <button className="ui button primary">
-      <ColorContext.Consumer>
-        {(color) => renderBtn(color)}
-      </ColorContext.Consumer>
-    </button>
+    <ColorContext.Consumer>{(color) => renderBtn(color)}</ColorContext.Consumer>
   );
 };
 

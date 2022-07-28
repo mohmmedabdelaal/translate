@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import UserCreate from './UserCreate';
 import ColorContext from '../context/ColorContext';
 import LanguageContext from '../context/LanguageContext';
+import LanguageSelector from './LanguageSelector';
 
 function App() {
   const [language, setLanguage] = useState('english');
@@ -12,11 +13,7 @@ function App() {
   return (
     <div className="ui container">
       <div>
-        <h2>
-          Select Language :
-          <i className="flag us" onClick={() => onLanguageHandler('en')} />
-          <i className="flag eg" onClick={() => onLanguageHandler('ar')} />
-        </h2>
+        <LanguageSelector onLanguageChange={onLanguageHandler} />
       </div>
       <div>
         <ColorContext.Provider value="green">
